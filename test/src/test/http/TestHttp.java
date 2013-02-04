@@ -6,7 +6,6 @@ import java.io.InputStream;
 import java.io.Reader;
 import java.lang.reflect.Method;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 
 import javax.xml.transform.stream.StreamSource;
@@ -79,7 +78,7 @@ public class TestHttp {
 		HttpClient client = new HttpClient();
 		client.getHostConfiguration().setHost(site, port);
 
-		// Ä£ÄâµÇÂ¼Ò³Ãæ login.jsp->main.jsp
+		// Ä£ï¿½ï¿½ï¿½Â¼Ò³ï¿½ï¿½ login.jsp->main.jsp
 		PostMethod post = new PostMethod("/assets-web/mq");
 		NameValuePair actionid = new NameValuePair("$actionid", "200000");
 		NameValuePair name = new NameValuePair("username", "admin");
@@ -105,7 +104,7 @@ public class TestHttp {
 		HttpClient client = new HttpClient();
 		client.getHostConfiguration().setHost(site, port);
 
-		// Ä£ÄâµÇÂ¼Ò³Ãæ login.jsp->main.jsp
+		// Ä£ï¿½ï¿½ï¿½Â¼Ò³ï¿½ï¿½ login.jsp->main.jsp
 		PostMethod post = new PostMethod("/c6/Jhsoft.Web.login/PassWord.aspx");
 		// Password2 0
 		// UserName yangmq
@@ -117,8 +116,8 @@ public class TestHttp {
 		// hidEpass 2
 		// hidIsValid 0
 		// hidLoginState
-		// txtLan ¼òÌåÖÐÎÄ
-		// txtPassword ÃÜÂëµÇÂ¼
+		// txtLan ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		// txtPassword ï¿½ï¿½ï¿½ï¿½ï¿½Â¼
 		post.setRequestBody(new NameValuePair[] {
 				new NameValuePair("Password2", "0"),
 				new NameValuePair("UserName", "yangmq"),
@@ -133,8 +132,8 @@ public class TestHttp {
 				new NameValuePair("hidIsValid", "0"),
 				new NameValuePair("hidLoginState", ""),
 
-				new NameValuePair("txtLan", "¼òÌåÖÐÎÄ"),
-				new NameValuePair("txtPassword", "ÃÜÂëµÇÂ¼") });
+				new NameValuePair("txtLan", "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"),
+				new NameValuePair("txtPassword", "ï¿½ï¿½ï¿½ï¿½ï¿½Â¼") });
 
 		int status = client.executeMethod(post);
 		// System.out.println(post.getResponseBodyAsString());
@@ -155,14 +154,14 @@ public class TestHttp {
 		downwork.releaseConnection();
 
 		/*
-		 * // ²é¿´ cookie ÐÅÏ¢ CookieSpec cookiespec =
+		 * // ï¿½é¿´ cookie ï¿½ï¿½Ï¢ CookieSpec cookiespec =
 		 * CookiePolicy.getDefaultSpec(); Cookie[] cookies =
 		 * cookiespec.match(site, port, "/" , false ,
 		 * client.getState().getCookies()); if (cookies.length == 0) {
 		 * System.out.println( "None" ); } else { for (Cookie cookie: cookies){
 		 * System.out.println(cookie.toString()); } }
 		 * 
-		 * // ·ÃÎÊËùÐèµÄÒ³Ãæ main2.jsp
+		 * // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò³ï¿½ï¿½ main2.jsp
 		 * http://oa.bytter.com/c6/JHSoft.Web.WorkFlat/Index.aspx
 		 * 
 		 * System.out.println("--------------"); GetMethod get=new
